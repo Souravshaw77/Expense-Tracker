@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Expense</title>
+  <style>
+    form { max-width: 400px; margin: auto; }
+    label, input, textarea, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Edit Expense</h2>
+  <form method="POST">
+    <label>Date:</label>
+    <input type="date" name="date" value="{{ expense[1] }}" required>
+
+    <label>Category:</label>
+    <input type="text" name="category" value="{{ expense[2] }}" required>
+
+    <label>Amount:</label>
+    <input type="number" name="amount" step="0.01" value="{{ expense[3] }}" required>
+
+    <label>Note:</label>
+    <textarea name="note">{{ expense[4] }}</textarea>
+
+    <button type="submit">Update Expense</button>
+  </form>
+</body>
+</html>
